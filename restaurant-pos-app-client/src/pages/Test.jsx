@@ -1,7 +1,8 @@
-import Header from "../../components/Layout/Header"
-import Sidebar from "../../components/Layout/Sidebar"
+import React from "react";
+import Sidebar from "../components/Layout/Sidebar";
+import Header from "../components/Layout/Header";
 
-const Orders = () => {
+const Test = () => {
   return (
     <div className="flex w-full">
       <Sidebar />
@@ -9,11 +10,11 @@ const Orders = () => {
       <div className="w-full overflow-hidden">
         <Header />
         <main className="flex-grow p-4">
-          <h1>orders</h1>
+          <h1>Test</h1>
         </main>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Orders
+export default Test;

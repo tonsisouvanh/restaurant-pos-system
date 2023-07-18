@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+  font-family: "gilroy";
+  font-style: normal;
+  font-weight: normal; /* Regular font weight */
+  src: url("./fonts/Gilroy/Gilroy-SemiBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "gilroy";
+  font-style: normal;
+  font-weight: 800; /* Regular font weight */
+  src: url("./fonts/Gilroy/Gilroy-ExtraBold.ttf") format("truetype");
+}
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-synthesis: none;
+  color: #222;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  background-color: #eff3fd;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}

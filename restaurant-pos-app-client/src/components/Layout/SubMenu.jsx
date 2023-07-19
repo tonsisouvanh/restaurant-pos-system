@@ -1,0 +1,44 @@
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { IoIosArrowDown } from "react-icons/io";
+import { Link, NavLink, useLocation } from "react-router-dom";
+
+const SubMenu = ({ submenus }) => {
+  const { pathname } = useLocation();
+
+  const getIdByPathname = (pathname) => {
+    const item = submenus.find((item) => item.to === pathname);
+    return item ? item.id : null;
+  };
+
+  const [subMenuActiveId, setSubMenuActiveId] = useState(
+    getIdByPathname(pathname)
+  );
+
+  const handleItemClick = (itemId) => {
+    setSubMenuActiveId(itemId);
+  };
+
+  return (
+    <>
+      {submenus.map((subitem) => (
+        <li
+          onClick={() => handleItemClick(subitem.id)}
+          key={subitem.id}
+          className={`p-3 cursor-pointer transition rounded-md ${
+            subMenuActiveId === subitem.id
+              ? "bg-primary/[10%] text-primary"
+              : "bg-transparent"
+          } hover:bg-primary/[10%]`}
+        >
+          <Link to={subitem.to} className={`flex items-center gap-2 `}>
+            <div className="text-xl">{subitem.icon}</div>
+            <span className="text-lg">{subitem.text}</span>
+          </Link>
+        </li>
+      ))}
+    </>
+  );
+};
+
+export default SubMenu;

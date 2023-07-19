@@ -4,16 +4,8 @@ import Header from '../../components/Layout/Header'
 
 const Tables = () => {
   return (
-    <div className="flex w-full">
-      <Sidebar />
-      {/* Right side content */}
-      <div className="w-full overflow-hidden">
-        <Header />
-        <main className="flex-grow p-4">
+    
           <h1>Table</h1>
-        </main>
-      </div>
-    </div>
   )
 }
 

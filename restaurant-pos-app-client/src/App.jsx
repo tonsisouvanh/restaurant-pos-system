@@ -16,11 +16,14 @@ import Menu from "./pages/Menu/Menu";
 import Reservation from "./pages/Reservation/Reservation";
 import Settings from "./pages/Settings/Settings";
 import Tables from "./pages/Tables/Tables";
+
+import RootLayout from "./components/Layout/RootLayout";
 import Test from "./pages/Test";
+import Categories from "./pages/Categories/Categories";
 
 function App() {
-  // const { user } = useContext(UserContext);
-  const user = { name: "John Doe", email: "john@hotmail.com" };
+  const { user } = useContext(UserContext);
+  // const user = { name: "John Doe", email: "john@hotmail.com" };
 
   const RequireAuth = ({ children }) => {
     return user ? children : <Navigate to="/login" />;
@@ -32,7 +35,7 @@ function App() {
 
   return (
     <>
-      <Router>
+      <RootLayout>
         <Routes>
           <Route path="/">
             <Route
@@ -84,10 +87,10 @@ function App() {
               }
             />
             <Route
-              path="/settings"
+              path="/categories"
               element={
                 <RequireAuth>
-                  <Settings />
+                  <Categories />
                 </RequireAuth>
               }
             />
@@ -99,17 +102,9 @@ function App() {
                 </RequireAuth>
               }
             />
-            {/* <Route
-              path="/admin/food/:id"
-              element={
-                <RequireAuth>
-                  <SingleFood />
-                </RequireAuth>
-              }
-            /> */}
           </Route>
         </Routes>
-      </Router>
+      </RootLayout>
     </>
   );
 }

@@ -1,12 +1,12 @@
 import Header from "./Header";
 import Sidebar from "./Sidebar";
 
-function RootLayout({ children }) {
+function RootLayout({ children, showSidebarAndHeader = true }) {
   return (
     <div className="flex">
-      <Sidebar />
+      {showSidebarAndHeader && <Sidebar /> }
       <div className="flex-1">
-        <Header />
+        {showSidebarAndHeader && <Header /> }
         <main className="flex-grow p-4">{children}</main>
       </div>
     </div>

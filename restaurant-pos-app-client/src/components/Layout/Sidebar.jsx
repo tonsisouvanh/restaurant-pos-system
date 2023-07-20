@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { BiLogoMastercard } from "react-icons/bi";
+import { IoIosArrowDown } from "react-icons/io";
 import { sidebarItems } from "../../data";
 import SubMenu from "./SubMenu";
 import { motion } from "framer-motion";
+import Logo from "../UI/Logo";
 const Sidebar = () => {
   const { pathname } = useLocation();
 
@@ -31,12 +32,7 @@ const Sidebar = () => {
       {/* //* Sidebar container */}
       <div className="p-4 flex flex-col items-center">
         <div className="space-y-12">
-          <div className="border-b-[1px] pb-7 flex items-center justify-center gap-2">
-            <div className="bg-primary rounded-lg p-2">
-              <BiLogoMastercard className="text-2xl" />
-            </div>
-            <h2 className="text-2xl font-bold">AEAT</h2>
-          </div>
+          <Logo />
           {/* //* Sidebar menu */}
           <ul className="min-w-[15rem] space-y-3">
             {sidebarItems.map((item, index) => (
@@ -44,14 +40,31 @@ const Sidebar = () => {
                 <Link
                   onClick={() => handleItemClick(item.id)}
                   to={item.to}
-                  className={`flex p-3 items-center gap-3 rounded-md transition duration-300 ${
+                  className={`flex p-3 items-center justify-between rounded-md transition duration-300 ${
                     activeItemId === item.id
                       ? "bg-primary text-white"
                       : "bg-transparent"
                   } group-hover:bg-primary group-hover:text-white`}
                 >
-                  <div className="text-2xl">{item.icon}</div>
-                  <span className="text-xl">{item.text}</span>
+                  <div className="flex items-center gap-3">
+                    <div className="text-2xl">{item.icon}</div>
+                    <span className="text-xl">{item.text}</span>
+                  </div>
+                  {item.submenu && (
+                    <motion.div
+                      animate={
+                        item.id === activeItemId
+                          ? {
+                              rotateX: 0,
+                            }
+                          : {
+                              rotateX: 180,
+                            }
+                      }
+                    >
+                      <IoIosArrowDown />
+                    </motion.div>
+                  )}
                 </Link>
                 {item.submenu && (
                   <motion.ul
@@ -66,7 +79,7 @@ const Sidebar = () => {
                     }
                     className={`overflow-hidden pl-4 space-y-3 text-gray-600`}
                   >
-                    <SubMenu submenus={item.submenu}  />
+                    <SubMenu submenus={item.submenu} />
                   </motion.ul>
                 )}
               </li>
@@ -79,5 +92,3 @@ const Sidebar = () => {
 };
 
 export default Sidebar;
-
-

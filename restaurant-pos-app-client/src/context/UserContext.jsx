@@ -10,7 +10,9 @@ const UserProvider = ({ children }) => {
   const login = (userData) => {
     // Your login logic here (e.g., API call to authenticate user)
     // Set the user data after successful login
-    setUser(userData);
+    const { email, password } = userData;
+    setUser({ email, password });
+    console.log(user);
   };
 
   const logout = () => {

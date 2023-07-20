@@ -1,7 +1,5 @@
-import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
-import { IoIosArrowDown } from "react-icons/io";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const SubMenu = ({ submenus }) => {
   const { pathname } = useLocation();

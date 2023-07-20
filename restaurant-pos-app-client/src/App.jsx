@@ -8,13 +8,10 @@ import {
 } from "react-router-dom";
 import Orders from "./pages/Orders/Orders";
 import Login from "./pages/Login/Login";
-import Sidebar from "./components/Layout/Sidebar";
-import Header from "./components/Layout/Header";
 import { UserContext } from "./context/UserContext";
 import { useContext } from "react";
 import Menu from "./pages/Menu/Menu";
 import Reservation from "./pages/Reservation/Reservation";
-import Settings from "./pages/Settings/Settings";
 import Tables from "./pages/Tables/Tables";
 
 import RootLayout from "./components/Layout/RootLayout";
@@ -35,76 +32,90 @@ function App() {
 
   return (
     <>
-      <RootLayout>
-        <Routes>
-          <Route path="/">
-            <Route
-              path="/login"
-              element={
-                <CheckIfLogin>
+      <Routes>
+        <Route path="/">
+          <Route
+            path="/login"
+            element={
+              <CheckIfLogin>
+                <RootLayout showSidebarAndHeader={false}>
                   <Login />
-                </CheckIfLogin>
-              }
-            ></Route>
-            <Route
-              index
-              element={
-                <RequireAuth>
+                </RootLayout>
+              </CheckIfLogin>
+            }
+          ></Route>
+          <Route
+            index
+            element={
+              <RequireAuth>
+                <RootLayout>
                   <Dashboard />
-                </RequireAuth>
-              }
-            />
-            <Route
-              path="/orders"
-              element={
-                <RequireAuth>
+                </RootLayout>
+              </RequireAuth>
+            }
+          />
+          <Route
+            path="/orders"
+            element={
+              <RequireAuth>
+                <RootLayout>
                   <Orders />
-                </RequireAuth>
-              }
-            />
-            <Route
-              path="/menus"
-              element={
-                <RequireAuth>
+                </RootLayout>
+              </RequireAuth>
+            }
+          />
+          <Route
+            path="/menus"
+            element={
+              <RequireAuth>
+                <RootLayout>
                   <Menu />
-                </RequireAuth>
-              }
-            />
-            <Route
-              path="/reservations"
-              element={
-                <RequireAuth>
+                </RootLayout>
+              </RequireAuth>
+            }
+          />
+          <Route
+            path="/reservations"
+            element={
+              <RequireAuth>
+                <RootLayout>
                   <Reservation />
-                </RequireAuth>
-              }
-            />
-            <Route
-              path="/tables"
-              element={
-                <RequireAuth>
+                </RootLayout>
+              </RequireAuth>
+            }
+          />
+          <Route
+            path="/tables"
+            element={
+              <RequireAuth>
+                <RootLayout>
                   <Tables />
-                </RequireAuth>
-              }
-            />
-            <Route
-              path="/categories"
-              element={
-                <RequireAuth>
+                </RootLayout>
+              </RequireAuth>
+            }
+          />
+          <Route
+            path="/categories"
+            element={
+              <RequireAuth>
+                <RootLayout>
                   <Categories />
-                </RequireAuth>
-              }
-            />
-            <Route
-              path="/test"
-              element={
-                <RequireAuth>
+                </RootLayout>
+              </RequireAuth>
+            }
+          />
+          <Route
+            path="/test"
+            element={
+              <RequireAuth>
+                <RootLayout>
                   <Test />
-                </RequireAuth>
-              }
-            />
-          </Route>
-        </Routes>
-      </RootLayout>
+                </RootLayout>
+              </RequireAuth>
+            }
+          />
+        </Route>
+      </Routes>
     </>
   );
 }

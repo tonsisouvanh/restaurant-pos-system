@@ -1,8 +1,15 @@
 use restaurant_db
+CREATE TABLE Categories (
+    category_id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+);
+
 CREATE TABLE Menus (
     menu_id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(255) NOT NULL,
-    description VARCHAR(500)
+    description VARCHAR(500),
+    category_id INT,
+    FOREIGN KEY (category_id) REFERENCES Categories(category_id)
 );
 
 INSERT INTO Menus (name, description) VALUES

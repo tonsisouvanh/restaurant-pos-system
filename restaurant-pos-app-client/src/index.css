@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @font-face {
   font-family: "gilroy";
   font-style: normal;
@@ -14,6 +13,34 @@
   font-style: normal;
   font-weight: 800; /* Regular font weight */
   src: url("./fonts/Gilroy/Gilroy-ExtraBold.ttf") format("truetype");
+}
+/* LAO */
+@font-face {
+  font-family: "notosanslao";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./fonts/NotoSansLao/NotoSansLao-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "notosanslao";
+  font-style: normal;
+  font-weight: 800;
+  src: url("./fonts/NotoSansLao/NotoSansLao-Bold.ttf") format("truetype");
+}
+/* VIETNAM */
+@font-face {
+  font-family: "vietnampro";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./fonts/VietnamPro/BeVietnamPro-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "vietnampro";
+  font-style: normal;
+  font-weight: 800;
+  src: url("./fonts/VietnamPro/BeVietnamPro-Regular.ttf") format("truetype");
 }
 
 :root {

@@ -20,7 +20,6 @@ import Categories from "./pages/Categories/Categories";
 
 function App() {
   const { user } = useContext(UserContext);
-  // const user = { name: "John Doe", email: "john@hotmail.com" };
 
   const RequireAuth = ({ children }) => {
     return user ? children : <Navigate to="/login" />;

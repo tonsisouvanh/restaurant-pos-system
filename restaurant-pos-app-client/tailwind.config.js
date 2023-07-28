@@ -4,8 +4,10 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        montserrat: ["Montserrat", "sans-serif"],
-        gilroy: ["gilroy", "sans-serif"],
+        montserrat: ["Montserrat", "notosanslao", "vietnampro", "sans-serif"],
+        gilroy: ["gilroy", "notosanslao", "vietnampro", "sans-serif"],
+        vietnampro: ["vietnampro", "sans-serif"],
+        notosanslao: ["notosanslao", "sans-serif"],
       },
       colors: {
         primary: "#0891b2",

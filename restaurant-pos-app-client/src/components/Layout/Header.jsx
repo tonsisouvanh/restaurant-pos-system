@@ -6,6 +6,7 @@ import { BsBell } from "react-icons/bs";
 import { useContext } from "react";
 
 import { UserContext } from "../../context/UserContext";
+import LanguageSelect from "../Selects/LanguageSelect";
 
 const Header = ({ hasNotification }) => {
   const { user } = useContext(UserContext);
@@ -29,7 +30,7 @@ const Header = ({ hasNotification }) => {
       </div>
       {/* //*TODO search bar */}
       <SearchBar onChange={handleSearch} />
-      {/* User Profile and Logout */}
+      {/* //TODO User Profile and Logout */}
       <div className="flex items-center space-x-5">
         <div className="relative rounded-lg shadow-md p-2 bg-white">
           <div className="flex items-center justify-center">
@@ -47,6 +48,8 @@ const Header = ({ hasNotification }) => {
           alt=""
         />
       </div>
+      {/* //TODO Language select */}
+      <LanguageSelect />
     </header>
   );
 };

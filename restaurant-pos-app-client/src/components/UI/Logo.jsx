@@ -6,7 +6,7 @@ const Logo = ({ logoSize = "text-4xl", textSize = "text-2xl" }) => {
       <div className="bg-primary rounded-lg p-2">
         <BiLogoMastercard className={`${logoSize} text-white`} />
       </div>
-      <h2 className={`${textSize} font-bold`}>FutureSTeam</h2>
+      <h2 className={`${textSize} font-mono font-bold`}>FutureSTeam</h2>
     </div>
   );
 };

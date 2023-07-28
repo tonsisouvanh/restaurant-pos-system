@@ -2,6 +2,8 @@
 
 import { createContext, useState } from "react";
 
+const initialUser = { name: "John Doe", email: "john@hotmail.com" };
+
 const UserContext = createContext();
 
 const UserProvider = ({ children }) => {
@@ -12,7 +14,6 @@ const UserProvider = ({ children }) => {
     // Set the user data after successful login
     const { email, password } = userData;
     setUser({ email, password });
-    console.log(user);
   };
 
   const logout = () => {

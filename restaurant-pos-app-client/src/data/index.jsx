@@ -66,6 +66,12 @@ const sidebarItems = [
     to: "/tables",
     icon: <BiTable />,
   },
+  {
+    id: 4,
+    text: "Test",
+    to: "/test",
+    icon: <BiTable />,
+  },
 ];
 
 const menuItems = [

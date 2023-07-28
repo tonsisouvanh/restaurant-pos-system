@@ -1,0 +1,9 @@
+{
+  "Login": {
+    "headline": "Welcome to Future Solution Team!",
+    "subline": "Login to access your account and start exploring our amazing features!",
+    "txtLogin": "Login",
+    "labelEmail": "Email",
+    "labelPassword": "Password"
+  }
+}

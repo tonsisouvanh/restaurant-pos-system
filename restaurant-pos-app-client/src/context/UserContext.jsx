@@ -7,7 +7,8 @@ const initialUser = { name: "John Doe", email: "john@hotmail.com" };
 const UserContext = createContext();
 
 const UserProvider = ({ children }) => {
-  const [user, setUser] = useState(null); // Store user data, null if not logged in
+  // const [user, setUser] = useState(null); // Store user data, null if not logged in
+  const [user, setUser] = useState(initialUser); // Store user data, null if not logged in
 
   const login = (userData) => {
     // Your login logic here (e.g., API call to authenticate user)

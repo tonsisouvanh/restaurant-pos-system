@@ -6,7 +6,6 @@ import {
   AiOutlineShoppingCart,
   AiOutlineUnorderedList,
 } from "react-icons/ai";
-
 const sidebarItems = [
   {
     id: 0,
@@ -67,7 +66,7 @@ const sidebarItems = [
     icon: <BiTable />,
   },
   {
-    id: 4,
+    id: 5,
     text: "Test",
     to: "/test",
     icon: <BiTable />,

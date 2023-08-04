@@ -1,13 +1,17 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { IoIosArrowDown } from "react-icons/io";
 import { sidebarItems } from "../../data";
 import SubMenu from "./SubMenu";
 import { motion } from "framer-motion";
 import Logo from "../UI/Logo";
-const Sidebar = () => {
-  const { pathname } = useLocation();
+import useScreenWidth from "../../hooks/useScreenWidth";
+import PropTypes from "prop-types";
 
+const Sidebar = ({ openSidebar, setOpenSidebar }) => {
+  const screenWidth = useScreenWidth();
+
+  const { pathname } = useLocation();
   const getIdByPathname = (pathname) => {
     const item = sidebarItems.find((item) => {
       if (item.submenu) {
@@ -25,16 +29,45 @@ const Sidebar = () => {
     setActiveItemId((prevItemId) => (prevItemId === itemId ? null : itemId));
   };
 
+  const variants = {
+    open: {
+      width: "300px",
+      transition: {
+        duration: 0.1,
+      },
+    },
+    closed: {
+      width: 0,
+      transition: {
+        duration: 0,
+      },
+    },
+  };
+
+  useEffect(() => {
+    if (screenWidth >= 1024) {
+      setOpenSidebar(true);
+    }
+  }, [screenWidth, setOpenSidebar]);
+
   return (
-    <aside
-      className={`h-screen shadow-xl font-gilroy sticky top-0 transition-all bg-white lg:w-[300px] text-gray-900`}
+    <motion.div
+      initial={{
+        width: "300px",
+      }}
+      animate={openSidebar ? "open" : "closed"}
+      variants={variants}
+      className={`h-screen fixed shadow-2xl font-gilroy md:sticky top-0 transition-all bg-white w-0 lg:w-[300px] lg:shadow-md text-gray-900 overflow-hidden z-20`}
     >
       {/* //* Sidebar container */}
-      <div className="p-4 flex flex-col items-center">
-        <div className="space-y-12">
-          <Logo />
+      <div className="relative flex flex-col">
+        <div className="space-y-5">
+          <div className="bg-gray-300 py-5">
+            <Logo />
+          </div>
           {/* //* Sidebar menu */}
-          <ul className="min-w-[15rem] space-y-3">
+          {/* <div> */}
+          <ul className="min-w-[15rem] px-5 space-y-3">
             {sidebarItems.map((item, index) => (
               <li key={index} className="space-y-3 group ">
                 <Link
@@ -74,6 +107,7 @@ const Sidebar = () => {
                             height: "fit-content",
                           }
                         : {
+                            marginTop: 0,
                             height: 0,
                           }
                     }
@@ -85,10 +119,16 @@ const Sidebar = () => {
               </li>
             ))}
           </ul>
+          {/* </div> */}
         </div>
       </div>
-    </aside>
+    </motion.div>
   );
 };
 
 export default Sidebar;
+
+Sidebar.propTypes = {
+  openSidebar: PropTypes.bool.isRequired, // name prop should be a required string
+  setOpenSidebar: PropTypes.func.isRequired, // name prop should be a required string
+};

@@ -1,6 +1,6 @@
 import { BsGrid1X2 } from "react-icons/bs";
 import { MdShoppingBasket, MdRestaurantMenu } from "react-icons/md";
-import { BiLogoMastercard, BiTable } from "react-icons/bi";
+import { BiTable } from "react-icons/bi";
 import {
   AiOutlineSchedule,
   AiOutlineShoppingCart,
@@ -35,7 +35,7 @@ const sidebarItems = [
   },
   {
     id: 2,
-    text: "Menu",
+    text: "Menus/Items",
     // to: "#",
     icon: <MdRestaurantMenu />,
     submenu: [

@@ -96,7 +96,7 @@ const LanguageSelect = () => {
     //   )}
     // </div>
 
-    <div ref={divRef} className="relative w-fit">
+    <div ref={divRef} className="relative min-w-fit">
       <div
         className="w-full cursor-pointer bg-white bg-opacity-80 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out "
         tabIndex={1}
@@ -121,18 +121,20 @@ const LanguageSelect = () => {
         )}
       </div>
       {isOpen && (
-        <div className="absolute pt-2 space-y-2 z-10 mt-1 w-full bg-transparent text-black">
-          {options
-            .filter((item) => item.value !== selectedValue)
-            .map((option, index) => (
-              <img
-                src={option.img}
-                key={index}
-                className="cursor-pointer"
-                onClick={() => handleLanguageChange(option.value)}
-                alt=""
-              />
-            ))}
+        <div className="absolute top-7 -left-[0.25rem] w-[2rem]">
+          <div className="shadow-md space-y-2 z-10 mt-1 p-1 bg-transparent bg-white rounded-full text-black">
+            {options
+              .filter((item) => item.value !== selectedValue)
+              .map((option, index) => (
+                <img
+                  src={option.img}
+                  key={index}
+                  className="cursor-pointer"
+                  onClick={() => handleLanguageChange(option.value)}
+                  alt=""
+                />
+              ))}
+          </div>
         </div>
       )}
     </div>

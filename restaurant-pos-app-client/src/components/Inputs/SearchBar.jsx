@@ -1,8 +1,10 @@
 import { AiOutlineSearch } from "react-icons/ai";
 
-const SearchBar = ({ onChange }) => {
+const SearchBar = ({ onChange, classname = "" }) => {
   return (
-    <div className="relative rounded-md flex items-center border">
+    <div
+      className={`relative rounded-md flex items-center border max-w-[20rem] ${classname}`}
+    >
       <div className="absolute left-3">
         <AiOutlineSearch className="h-5 w-5 text-gray-500" />
       </div>

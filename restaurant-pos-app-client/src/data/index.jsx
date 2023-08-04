@@ -6,12 +6,26 @@ import {
   AiOutlineShoppingCart,
   AiOutlineUnorderedList,
 } from "react-icons/ai";
+
+import {
+  FaBars,
+  FaUtensils,
+  FaFolder,
+  FaClipboardList,
+  FaTachometerAlt,
+  FaChartBar,
+  FaListAlt,
+  FaCube,
+  FaBox,
+  FaFolderOpen ,
+  FaTags 
+} from "react-icons/fa";
+
 const sidebarItems = [
   {
     id: 0,
     text: "Dashboard",
-    // to: "#",
-    icon: <BsGrid1X2 />,
+    icon: <FaChartBar />,
     submenu: [
       {
         id: 101,
@@ -31,25 +45,48 @@ const sidebarItems = [
     id: 1,
     text: "Orders",
     to: "/orders",
-    icon: <MdShoppingBasket />,
+    icon: <FaClipboardList />,
   },
   {
     id: 2,
     text: "Menus/Items",
-    // to: "#",
-    icon: <MdRestaurantMenu />,
+    icon: <FaBars />,
     submenu: [
       {
         id: 20,
-        text: "All menus",
+        text: "Menus",
         to: "/menus",
-        icon: <AiOutlineShoppingCart />,
+        icon: <FaUtensils />,
       },
       {
         id: 21,
-        text: "Categories",
+        text: "Menu Categories",
         to: "/categories",
-        icon: <AiOutlineUnorderedList />,
+        icon: <FaFolder />,
+      },
+      {
+        id: 22,
+        text: "Manage Menus",
+        to: "/manage-menus",
+        icon: <FaListAlt />,
+      },
+      {
+        id: 23,
+        text: "Items",
+        to: "/items",
+        icon: <FaCube />,
+      },
+      {
+        id: 24,
+        text: "Items Categories",
+        to: "/categories",
+        icon: <FaTags />,
+      },
+      {
+        id: 25,
+        text: "Manage Items",
+        to: "/manage-items",
+        icon: <FaListAlt />,
       },
     ],
   },

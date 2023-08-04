@@ -57,7 +57,7 @@ const Sidebar = ({ openSidebar, setOpenSidebar }) => {
       }}
       animate={openSidebar ? "open" : "closed"}
       variants={variants}
-      className={`h-screen fixed shadow-2xl font-gilroy md:sticky top-0 transition-all bg-white w-0 lg:w-[300px] lg:shadow-md text-gray-900 overflow-hidden z-20`}
+      className={`h-screen fixed shadow-2xl font-sans md:sticky top-0 transition-all bg-white w-0 lg:w-[300px] lg:shadow-md text-gray-900 overflow-hidden z-20`}
     >
       {/* //* Sidebar container */}
       <div className="relative flex flex-col">
@@ -81,7 +81,7 @@ const Sidebar = ({ openSidebar, setOpenSidebar }) => {
                 >
                   <div className="flex items-center gap-3">
                     <div className="text-2xl">{item.icon}</div>
-                    <span className="text-xl">{item.text}</span>
+                    <span className="text-md">{item.text}</span>
                   </div>
                   {item.submenu && (
                     <motion.div

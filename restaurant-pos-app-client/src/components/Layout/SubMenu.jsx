@@ -31,7 +31,7 @@ const SubMenu = ({ submenus }) => {
         >
           <Link to={subitem.to} className={`flex items-center gap-2 `}>
             <div className="text-xl">{subitem.icon}</div>
-            <span className="text-lg">{subitem.text}</span>
+            <span className="text-sm">{subitem.text}</span>
           </Link>
         </li>
       ))}

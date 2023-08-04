@@ -1,5 +1,16 @@
+import { useLocation } from "react-router-dom";
+import Breadcrumb from "../../components/Layout/Breadcrumb";
+
 const Menu = () => {
-  return <h1>Menu</h1>;
+  const location = useLocation();
+  return (
+    <div>
+      <div>
+        <Breadcrumb pathname={location.pathname} txtFrom="Menus-Items" />
+      </div>
+      
+    </div>
+  );
 };
 
 export default Menu;

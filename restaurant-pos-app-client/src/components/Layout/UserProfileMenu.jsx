@@ -15,6 +15,7 @@ const UserProfileMenu = ({ hasNotification, userName, isOpen }) => {
     closed: {
       y: "-10px",
       opacity: 0,
+      display: "none",
       transition: {
         duration: 0.1,
       },

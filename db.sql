@@ -1,4 +1,3 @@
-
 use restaurant_db;
 CREATE TABLE Categories (
     category_id INT PRIMARY KEY AUTO_INCREMENT,

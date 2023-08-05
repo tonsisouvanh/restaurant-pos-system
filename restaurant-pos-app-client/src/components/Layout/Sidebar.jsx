@@ -56,7 +56,7 @@ const Sidebar = ({ openSidebar, setOpenSidebar }) => {
       }}
       animate={openSidebar ? "open" : "closed"}
       variants={variants}
-      className={`h-screen fixed shadow-2xl font-sans md:sticky top-0 transition-all bg-white w-0 lg:w-[300px] lg:shadow-md text-gray-900 overflow-hidden z-20`}
+      className={`h-screen fixed shadow-2xl font-roboto md:sticky top-0 transition-all bg-white w-0 lg:w-[300px] lg:shadow-md text-gray-900 overflow-hidden z-20`}
     >
       {/* //* Sidebar container */}
       <div className="relative flex flex-col">

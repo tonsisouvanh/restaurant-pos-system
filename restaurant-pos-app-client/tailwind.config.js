@@ -8,6 +8,7 @@ export default {
         gilroy: ["gilroy", "notosanslao", "vietnampro", "sans-serif"],
         vietnampro: ["vietnampro", "sans-serif"],
         notosanslao: ["notosanslao", "sans-serif"],
+        roboto: ["Roboto", "sans-serif"],
       },
       colors: {
         primary: "#0891b2",

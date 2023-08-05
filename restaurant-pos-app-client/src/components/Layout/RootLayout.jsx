@@ -13,7 +13,7 @@ function RootLayout({ children, showSidebarAndHeader = true }) {
           <Sidebar openSidebar={openSidebar} setOpenSidebar={setOpenSidebar} />
         </ClickOutsideHandler>
       )}
-      <div className="flex-1">
+      <div className="flex-1 overflow-scroll">
         {showSidebarAndHeader && (
           <ClickOutsideHandler setIsOpen={setOpenSidebar}>
             <Header
@@ -23,7 +23,7 @@ function RootLayout({ children, showSidebarAndHeader = true }) {
             />
           </ClickOutsideHandler>
         )}
-        <main className="flex-grow p-4">{children}</main>
+        <div className="p-4">{children}</div>
       </div>
     </div>
   );

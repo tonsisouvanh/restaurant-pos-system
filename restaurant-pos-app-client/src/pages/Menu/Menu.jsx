@@ -8,7 +8,6 @@ const Menu = () => {
       <div>
         <Breadcrumb pathname={location.pathname} txtFrom="Menus-Items" />
       </div>
-      
     </div>
   );
 };

@@ -10,7 +10,6 @@ import PropTypes from "prop-types";
 
 const Sidebar = ({ openSidebar, setOpenSidebar }) => {
   const screenWidth = useScreenWidth();
-
   const { pathname } = useLocation();
   const getIdByPathname = (pathname) => {
     const item = sidebarItems.find((item) => {

@@ -9,14 +9,14 @@ import {
 import Orders from "./pages/Orders/Orders";
 import Login from "./pages/Login/Login";
 import { UserContext } from "./context/UserContext";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import Menu from "./pages/Menu/Menu";
 import Reservation from "./pages/Reservation/Reservation";
 import Tables from "./pages/Tables/Tables";
 
 import RootLayout from "./components/Layout/RootLayout";
 import Test from "./pages/Test";
-import Categories from "./pages/Categories/Categories";
+import MenuCatgories from "./pages/Menu/MenuCategories";
 
 function App() {
   const { user } = useContext(UserContext);
@@ -98,7 +98,7 @@ function App() {
             element={
               <RequireAuth>
                 <RootLayout>
-                  <Categories />
+                  <MenuCatgories />
                 </RootLayout>
               </RequireAuth>
             }

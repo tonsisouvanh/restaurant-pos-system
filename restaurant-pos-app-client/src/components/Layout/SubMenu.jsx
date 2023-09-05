@@ -16,7 +16,6 @@ const SubMenu = ({ submenus }) => {
   const handleItemClick = (itemId) => {
     setSubMenuActiveId(itemId);
   };
-  console.log(pathname);
 
   return (
     <>

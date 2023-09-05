@@ -61,7 +61,7 @@ const Sidebar = ({ openSidebar, setOpenSidebar }) => {
       {/* //* Sidebar container */}
       <div className="relative flex flex-col">
         <div className="space-y-5">
-          <div className="bg-gray-300 py-5">
+          <div className="bg-gray-200 py-5">
             <Logo />
           </div>
           {/* //* Sidebar menu */}

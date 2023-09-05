@@ -46,6 +46,7 @@ const Header = ({ hasNotification, setOpenSidebar, openSidebar, divRef }) => {
           hasNotification={hasNotification}
           userName={"Kruluz Utsman"}
           isOpen={isOpen}
+          setIsOpen={setIsOpen}
         />
         <div
           onClick={() => setIsOpen(!isOpen)}

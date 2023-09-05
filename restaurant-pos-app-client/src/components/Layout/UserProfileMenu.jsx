@@ -2,8 +2,12 @@ import LanguageSelect from "../Selects/LanguageSelect";
 import { BsBell } from "react-icons/bs";
 import { motion } from "framer-motion";
 import PropTypes from "prop-types";
+import { useEffect } from "react";
+import useScreenWidth from "../../hooks/useScreenWidth";
 
-const UserProfileMenu = ({ hasNotification, userName, isOpen }) => {
+const UserProfileMenu = ({ hasNotification, userName, isOpen, setIsOpen }) => {
+  const screenWidth = useScreenWidth();
+
   const variants = {
     open: {
       y: 0,
@@ -21,6 +25,11 @@ const UserProfileMenu = ({ hasNotification, userName, isOpen }) => {
       },
     },
   };
+  useEffect(() => {
+    if (screenWidth >= 1024) {
+      setIsOpen(false);
+    }
+  }, [screenWidth, setIsOpen]);
   return (
     <>
       {/* Responsive view */}
@@ -31,7 +40,7 @@ const UserProfileMenu = ({ hasNotification, userName, isOpen }) => {
         }}
         animate={isOpen ? "open" : "closed"}
         variants={variants}
-        className="absolute top-12 right-5 lg:hidden"
+        className="absolute top-12 right-5 lg:hidden z-10"
       >
         {/* //TODO User Profile and Logout */}
         <div className=" space-x-5 flex items-center justify-between bg-white border rounded-lg shadow-md p-3">
